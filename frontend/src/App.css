@@ -24,6 +24,38 @@
   object-fit: cover;
 }
 
+/* Card.tsx */
+.card{
+  max-width: 400px;
+  background-color: antiquewhite;
+  color: black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.card__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.card__date {
+  font-size: 12px;
+}
+
+/* Dashboard */
+
+.dashboard__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+
+}
+
+
 /* Utilities */
 
 .sr-only {
