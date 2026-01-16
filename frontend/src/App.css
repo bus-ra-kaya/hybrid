@@ -16,6 +16,7 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  overflow: hidden;
 }
 
 .avatar img {
@@ -31,18 +32,20 @@
   color: black;
   border-radius: 10px;
   padding: 10px;
+  margin-bottom: 10px;
 }
 
-.card__header {
+.card__header, .card__footer {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 20px;
+  margin: 12px;
 }
 
 .card__date {
-  font-size: 12px;
+  font-size: 10px;
 }
+
 
 /* Dashboard */
 

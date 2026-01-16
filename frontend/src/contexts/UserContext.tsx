@@ -19,11 +19,14 @@ export function UserProvider({children}: {children: React.ReactNode}){
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-
-
+    try{
     //add fetching function
-
+      
     setLoading(false);
+    }
+    catch(err){
+      throw new Error(err);
+    }
   }, []);
 
 return (

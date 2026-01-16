@@ -1,5 +1,6 @@
-import Dashboard from './Dashboard'
-import'./App.css'
+import Dashboard from './Dashboard';
+
+import'./App.css';
 
 export default function App(){
 

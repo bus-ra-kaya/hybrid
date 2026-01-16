@@ -43,9 +43,8 @@ export default function Avatar({src, name, size = "md"}: AvatarProps){
 
 function getInitials(name?: string){
     if(!name) return null;
-    const parts = name.trim().split(/\s+/);
-    if (parts.length === 1){
-        return parts[0].substring(0,2).toUpperCase();
-    }
-    return ((parts[0][0] + parts.at(-1)![0]).toUpperCase());
+    
+    const trimmed =name.trim();
+
+    return trimmed[0].toUpperCase();
 }
