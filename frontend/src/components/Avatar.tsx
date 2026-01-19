@@ -1,4 +1,4 @@
-import defaultAvatar from './assets/avatar-default.svg'
+import defaultAvatar from '../assets/avatar-default.svg'
 
 type AvatarProps = {
     readonly src?: string,

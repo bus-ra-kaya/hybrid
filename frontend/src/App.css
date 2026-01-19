@@ -28,9 +28,9 @@
 /* Card.tsx */
 .card{
   max-width: 400px;
-  background-color: antiquewhite;
+  background-color: var(--posts);
   color: black;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 10px;
   margin-bottom: 10px;
 }
@@ -48,14 +48,49 @@
 
 
 /* Dashboard */
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 240px 1fr;
+}
 
-.dashboard__nav {
+.topbar {
+  grid-column: 1 /-1;
+  height: 56px;
+  border-bottom: 1px solid var(--border);
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 20px;
+}
 
+.topbar > span {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.logo{
+  font-family: 'Cormorant', sans-serif;
+  font-size: 16px;
+}
+
+.layout{
+  display: grid;
+  grid-template-columns: 2fr 5fr 2fr;
+}
+
+.left-sidebar {
+  border-right: 1px solid rgb(24, 17, 17);
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.left-sidebar > button{
+  width: 180px;
+  height: 30px;
+  margin-bottom: 3px;
+  cursor: pointer;
 }
 
 

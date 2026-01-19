@@ -1,14 +1,14 @@
 import Avatar from './Avatar';
 import {Heart, MessagesSquare } from "lucide-react";
-import { getRelativeDate } from './utils/relativeTime';
+import { getRelativeDate } from '../utils/relativeTime';
 
 type CardProps = {
-  text: string,
-  date: string,
-  likes: number,
-  comments: number,
-  avatar: string,
-  username: string
+  readonly text: string,
+  readonly date: string,
+  readonly likes: number,
+  readonly comments: number,
+  readonly avatar: string,
+  readonly username: string
 }
 
 export default function Card({text, date, likes, comments, avatar, username}:CardProps){
