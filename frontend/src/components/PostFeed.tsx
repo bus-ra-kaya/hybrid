@@ -1,15 +1,15 @@
 import { useState, useEffect, useRef} from 'react';
-import Card from './Card';
+import Post from './Post';
 
-type Post = {
-  id: number,
-  username: string,
-  avatarUrl: string,
-  content: string,
-  createdAt: string,
-  updatedAt: string,
-  likes: number,
-  comments: number
+interface Post {
+  id: number;
+  username: string;
+  avatarUrl: string;
+  content: string;
+  createdAt: string;
+  updatedAt: string;
+  likes: number;
+  comments: number;
 }
 
 export default function PostFeed(){
@@ -50,21 +50,21 @@ export default function PostFeed(){
   },[])
 
   return(
-    <>
+    <main className='main-content'>
     {posts.map(p => {
       return(
-          <Card key={p.id} username={p.username} avatar={p.avatarUrl} text={p.content} date={p.createdAt}comments={p.comments} likes={p.likes}/>
+          <Post key={p.id} username={p.username} avatar={p.avatarUrl} text={p.content} date={p.createdAt}comments={p.comments} likes={p.likes}/>
             )
       })}
 
     {isLoading && <p>Loading...</p> }
 
     {hasNextPage && (
-      <button onClick={fetchPosts} disabled={isLoading}>
-        {isLoading ? "Loading..." : "Display More"}
+      <button onClick={fetchPosts} className='load-more-btn'>
+        {isLoading ? ". . ." : "Display More"}
       </button>
     )}
     
-    </>
+    </main>
   )
 }
