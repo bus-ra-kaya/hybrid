@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef} from 'react';
 import Post from './Post';
+import { PostSkeleton } from './PostSkeleton';
 
 interface Post {
   id: number;
@@ -22,11 +23,11 @@ export default function PostFeed(){
   const isFetchingRef = useRef(false);
 
   const fetchPosts = async () => {
-    if(isFetchingRef.current) return;
+    if (isFetchingRef.current) return;
     isFetchingRef.current = true;
     setIsLoading(true);
 
-    try{
+    try {
       const res = await fetch(
       `http://localhost:8000/posts?offset=${offset}`);
 
@@ -36,10 +37,9 @@ export default function PostFeed(){
       setHasNextPage(data.hasNextPage);
       setOffset(prev => prev + 10);
 
-    }catch(err){
+    } catch(err) {
       console.error(err);
-    }
-    finally{
+    } finally {
       isFetchingRef.current = false;
       setIsLoading(false);
     }
@@ -51,17 +51,23 @@ export default function PostFeed(){
 
   return(
     <main className='main-content'>
-    {posts.map(p => {
+
+      {posts.length === 0 ?
+      Array.from({length: 6}, (_, i) => (
+          <PostSkeleton key={i}/>
+        ))
+      :posts.map(p => {
       return(
-          <Post key={p.id} username={p.username} avatar={p.avatarUrl} text={p.content} date={p.createdAt}comments={p.comments} likes={p.likes}/>
-            )
+          <Post key={p.id} username={p.username} avatar={p.avatarUrl} text={p.content} date={p.createdAt}comments={p.comments} likes={p.likes}/>)
       })}
 
-    {isLoading && <p>Loading...</p> }
-
-    {hasNextPage && (
-      <button onClick={fetchPosts} className='load-more-btn'>
-        {isLoading ? ". . ." : "Display More"}
+    {hasNextPage && !isLoading && (
+      <button 
+        onClick={fetchPosts} 
+        className='load-more-btn'
+        aria-live='polite'
+      >
+        { "Display More"}
       </button>
     )}
     

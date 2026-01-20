@@ -1,6 +1,6 @@
-import Avatar from './Avatar';
+import Avatar from '../Avatar';
 import {Heart, MessagesSquare } from "lucide-react";
-import { getRelativeDate } from '../utils/relativeTime';
+import { getRelativeDate } from '../../utils/relativeTime';
 
 interface PostProps {
   readonly text: string;
@@ -16,21 +16,23 @@ export default function Post({text, date, likes, comments, avatar, username}:Pos
   const parsedDate = new Date(date);
 
   return(
-    <div className='post'>
+    <article className='post'>
       <div className='post__header'>
         <Avatar src={avatar} name={username} size="sm" />
         <span className='post__username'>{username}</span>
-        <span className='post__date'>{getRelativeDate(parsedDate)}</span>
+        <time className='post__date' dateTime={parsedDate.toISOString()}>
+          {getRelativeDate(parsedDate)}
+        </time>
       </div>
       <p className='post__content'>{text}</p>
       <div className='post__actions'>
-        <button>
+        <button aria-label={`Like post by ${username}`}>
           <Heart/>{likes}
         </button>
-        <button>
+        <button aria-label={`View ${comments} comments on post by ${username}`}>
           <MessagesSquare/>{comments} 
         </button> 
       </div>
-    </div>
+    </article>
   )
 }

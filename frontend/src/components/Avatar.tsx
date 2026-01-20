@@ -1,50 +1,50 @@
 import defaultAvatar from '../assets/avatar-default.svg'
 
-type AvatarProps = {
-    readonly src?: string,
-    readonly name?: string,
-    readonly size?: "sm" | "md"| "lg"
+interface AvatarProps {
+  readonly src?: string;
+  readonly name?: string;
+  readonly size?: "sm" | "md"| "lg";
 }
 
 const SIZES = {
-    sm: 32,
-    md: 40,
-    lg: 56
+  sm: 32,
+  md: 40,
+  lg: 56
 }
 
 export default function Avatar({src, name, size = "md"}: AvatarProps){
 
-    const px = SIZES[size];
-    const initials = getInitials(name);
+	const px = SIZES[size];
+	const initials = getInitials(name);
 
-    let content: React.ReactNode;
-    const altText = name? `${name}'s avatar` : "User avatar";
+	let content: React.ReactNode;
+	const altText = name? `${name}'s avatar` : "User avatar";
 
-    if(src){
-        content = <img src={src} alt={altText} />
-    }
-    else if(initials){
-        content = 
-            <>
-                <span aria-hidden="true">{initials}</span>
-                <span className="sr-only">{altText}</span>
-            </>
-    }
-    else {
-        content = <img src={defaultAvatar} alt={altText} />
-    }
+	if(src){
+		content = <img src={src} alt={altText} />
+	}
+	else if(initials){
+		content = 
+			<>
+				<span aria-hidden="true">{initials}</span>
+				<span className="sr-only">{altText}</span>
+			</>
+	}
+	else {
+			content = <img src={defaultAvatar} alt={altText} />
+	}
 
-    return(
-        <div className="avatar" style={{width: px, height: px}}>
-                {content}
-        </div>
-    )
+	return(
+		<div className="avatar" style={{width: px, height: px}}>
+			{content}
+		</div>
+	)
 }
 
 function getInitials(name?: string){
-    if(!name) return null;
-    
-    const trimmed =name.trim();
+	if(!name) return null;
+	
+	const trimmed =name.trim();
 
-    return trimmed[0].toUpperCase();
+	return trimmed[0].toUpperCase();
 }

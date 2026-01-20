@@ -1,4 +1,5 @@
 import Dashboard from './components/Dashboard';
+import './styles/Feed.css'
 
 import'./App.css';
 

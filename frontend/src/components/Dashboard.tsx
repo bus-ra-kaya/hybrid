@@ -1,6 +1,6 @@
 import Avatar from './Avatar';
 import {Search, House, PenTool, MessageCircle} from "lucide-react";
-import PostFeed from './PostFeed';
+import PostFeed from './Feed/PostFeed';
 
 export default function Dashboard(){
 
