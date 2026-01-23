@@ -1,8 +1,13 @@
 import Avatar from './Avatar';
-import {Search, House, PenTool, MessageCircle} from "lucide-react";
 import PostFeed from './Feed/PostFeed';
+import NewPost from './Feed/NewPost';
+import {Search, House, PenTool, MessageCircle} from 'lucide-react';
+import { useState } from 'react';
+
 
 export default function Dashboard(){
+
+  const [view, setView] = useState< "feed" | "newpost">("feed");
 
   return (
     <div className='page'>
@@ -14,17 +19,22 @@ export default function Dashboard(){
         </div>
       </div>
       <div className='sidebar__left'>
-            <button> 
+            <button onClick={() => setView("feed")}> 
 							<House/> Home
 						</button>
-            <button>
+            <button onClick={() => setView("newpost")}>
 							<PenTool/> Post
 						</button>
 						<button>
 							<MessageCircle/> Messages
 						</button>
       </div>
-      <PostFeed />
+      <main className='main-content'>
+      {view === "feed" 
+      ? <PostFeed/>
+      : <NewPost />
+      }
+      </main>
     </div>
     )
 }

@@ -50,8 +50,7 @@ export default function PostFeed(){
   },[])
 
   return(
-    <main className='main-content'>
-
+    <>
       {posts.length === 0 ?
       Array.from({length: 6}, (_, i) => (
           <PostSkeleton key={i}/>
@@ -70,7 +69,6 @@ export default function PostFeed(){
         { "Display More"}
       </button>
     )}
-    
-    </main>
+  </>
   )
 }

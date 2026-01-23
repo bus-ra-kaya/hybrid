@@ -15,21 +15,21 @@ export function getRelativeDate(date: Date){
     return diffInHours === 1 ? 'an hour ago' : `${diffInHours} hours ago`;
   }
 
-    const diffInDays = Math.floor(diffInHours / 60);
+    const diffInDays = Math.floor(diffInHours / 24);
     if (diffInDays < 7) {
     return diffInDays === 1 ? 'yesterday' : `${diffInDays} days ago`;
   }
 
-    const diffInWeeks = Math.floor(diffInDays / 60);
+    const diffInWeeks = Math.floor(diffInDays / 7);
     if (diffInWeeks < 4) {
     return diffInWeeks === 1 ? 'a week ago' : `${diffInWeeks} weeks ago`;
   }
 
-    const diffInMonths = Math.floor(diffInWeeks / 60);
+    const diffInMonths = Math.floor(diffInWeeks / 4);
     if (diffInMonths < 12) {
     return diffInMonths === 1 ? 'a month ago' : `${diffInMonths} months ago`;
   }
 
-    const diffInYears = Math.floor(diffInMonths / 60);
+    const diffInYears = Math.floor(diffInMonths / 12);
     return diffInYears === 1 ? 'a year ago' : `${diffInYears} years ago`;
 }
