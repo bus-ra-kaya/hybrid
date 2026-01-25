@@ -1,7 +1,19 @@
-#root {
-  margin: 0 auto;
+/* App.tsx */
+
+.page {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main{
+  flex: 1;
+}
+
+.footer{
   padding: 2rem;
-  text-align: center;
+  width: 100%;
 }
 
 /* Avatar.tsx */
@@ -29,7 +41,8 @@
 .main-content{
   padding: 1rem;
 }
-.page {
+
+.dashboard {
   display: grid;
   grid-template-rows: auto 1fr;
   grid-template-columns: 240px 1fr;

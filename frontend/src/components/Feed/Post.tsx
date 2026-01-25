@@ -2,7 +2,7 @@ import Avatar from '../Avatar';
 import {Heart, MessagesSquare } from "lucide-react";
 import { getRelativeDate } from '../../utils/relativeTime';
 
-interface PostProps {
+type PostProps = {
   readonly text: string;
   readonly date: string;
   readonly likes: number;

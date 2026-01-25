@@ -10,7 +10,7 @@ export default function Dashboard(){
   const [view, setView] = useState< "feed" | "newpost">("feed");
 
   return (
-    <div className='page'>
+    <div className='dashboard'>
       <div className='header'>
         <span>Hybrid</span>
         <div className='header__actions'>

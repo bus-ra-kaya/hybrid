@@ -2,7 +2,7 @@ import { useState, useEffect, useRef} from 'react';
 import Post from './Post';
 import { PostSkeleton } from './PostSkeleton';
 
-interface Post {
+type Post = {
   id: number;
   username: string;
   avatarUrl: string;

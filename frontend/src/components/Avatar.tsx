@@ -1,6 +1,6 @@
 import defaultAvatar from '../assets/avatar-default.svg'
 
-interface AvatarProps {
+type AvatarProps = {
   readonly src?: string;
   readonly name?: string;
   readonly size?: "sm" | "md"| "lg";
