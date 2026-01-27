@@ -5,16 +5,17 @@ import sudokuImage from '../assets/sudoku.png';
 
 type LandingProps = {
   onLoginClick: () => void;
+  onRegisterClick: () => void;
 }
 
-export default function Landing({onLoginClick} :LandingProps ){
+export default function Landing({onLoginClick, onRegisterClick} :LandingProps ){
   return (
     <>
     <div className={s.header__actions}> 
       <button onClick={onLoginClick}>
         Login
       </button>
-      <button>
+      <button onClick={onRegisterClick}>
         Sign-up
       </button>
     </div>

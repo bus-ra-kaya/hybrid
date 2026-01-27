@@ -4,8 +4,19 @@ import NewPost from './Feed/NewPost';
 import {Search, House, PenTool, MessageCircle} from 'lucide-react';
 import { useState } from 'react';
 
+type User =  {
+  id: true,
+  username: true,
+  avatarUrl: true,
+}
 
-export default function Dashboard(){
+type DashboardProps = {
+  user: User,
+  onLogout: () => void,
+}
+
+
+export default function Dashboard({user, onLogout}: DashboardProps){
 
   const [view, setView] = useState< "feed" | "newpost">("feed");
 
