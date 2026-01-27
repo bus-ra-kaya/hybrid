@@ -9,7 +9,7 @@ const PORT = process.env.PORT;
 
 app.use(express.json());
 
-app.use('api/auth',authRoutes);
+app.use('/api/auth',authRoutes);
 app.use('/api/posts', postRoutes);
 
 app.get("/health", (req, res) => {

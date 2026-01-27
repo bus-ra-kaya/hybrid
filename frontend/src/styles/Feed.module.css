@@ -1,5 +1,5 @@
 /* PostFeed*/
-.load-more-btn {
+.loadMoreBtn {
   margin-top: 20px;
   padding: 10px 16px;
   font-size: 14px;
@@ -28,46 +28,46 @@
   gap: 0.5rem;
 }
 
-.post__header{
+.postHeader{
   display: flex;
   align-items: center;
   gap: 0.5rem;
   width: 100%;
 }
 
-.post__username {
+.postUsername {
   font-weight: bold;
 }
 
-.post__content {
+.postContent {
   line-height: 1.6;
 }
 
-.post__date {
+.postDate {
   font-size: 0.75rem;
   opacity: 0.7;
 }
-.post__actions {
+.postActions {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-top: 0.8rem;
 
 }
-.post__actions > button {
+.postActions > button {
   background-color: transparent;
   border: none;
   color: var(--text);
 }
 
-.post__actions button:hover {
+.postActions button:hover {
   transform: translateY(-1px);
   cursor: pointer;
 }
 
 /* PostSkeleton */
 
-.post__skeleton {
+.postSkeleton {
   color: transparent;
   pointer-events: none;
 }
@@ -88,26 +88,26 @@
   100% { background-position: -200% 0; }
 }
 
-.post__avatar.skeleton {
+.postAvatar.skeleton {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
-.post__username.skeleton {
+.postUsername.skeleton {
   width: 30%; 
   height: 14px;
   border-radius: 34px;
 }
 
-.post__content.skeleton {
+.postContent.skeleton {
   height: 40px;
   margin-left: 12px;
   border-radius: 6px;
   width: 300px;
 }
 
-.post__actions .skeleton {
+.postActions .skeleton {
   width: 80px; 
   height: 32px;
   border-radius: 6px;

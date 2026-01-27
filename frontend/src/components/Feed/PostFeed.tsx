@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef} from 'react';
 import Post from './Post';
 import { PostSkeleton } from './PostSkeleton';
+import s from '../../styles/Feed.module.css';
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 type Post = {
   id: number;
@@ -29,7 +32,7 @@ export default function PostFeed(){
 
     try {
       const res = await fetch(
-      `http://localhost:8000/posts?offset=${offset}`);
+      `${API_BASE_URL}/api/posts?offset=${offset}`);
 
       const data = await res.json();
 
@@ -63,7 +66,7 @@ export default function PostFeed(){
     {hasNextPage && !isLoading && (
       <button 
         onClick={fetchPosts} 
-        className='load-more-btn'
+        className={s.loadMoreBtn}
         aria-live='polite'
       >
         { "Display More"}

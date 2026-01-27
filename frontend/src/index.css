@@ -4,6 +4,9 @@
   --text: #292530;
 }
 
+* {
+  box-sizing: border-box;
+}
 
 body{
   font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -17,12 +20,11 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0px;
-  box-sizing: border-box;
   background: linear-gradient(
   135deg,
-  #2e1313 0%,
-  #916330 100%
+  #1a0a0a 0%,
+  #302a23 100%
 );
 
   background-attachment: fixed;
-}
+};

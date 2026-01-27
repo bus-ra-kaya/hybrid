@@ -1,8 +1,8 @@
 import s from '../styles/Landing.module.css';
 
 type GameCardProps = {
-  imgUrl: string;
-  text: string;
+  readonly imgUrl: string;
+  readonly text: string;
 }
 
 export default function GameCard({imgUrl, text}: GameCardProps){

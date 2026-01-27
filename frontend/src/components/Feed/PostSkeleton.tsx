@@ -1,21 +1,30 @@
+import s from '../../styles/Feed.module.css';
+
 export const PostSkeleton = () => {
-return (
-    <article 
-      className='post post__skeleton'
+  return (
+    <article
+      className={`${s.post} ${s.postSkeleton}`}
       aria-busy="true"
       aria-label="Loading posts"
     >
-      <div className='post__header'>
-        <div className='post__avatar skeleton'></div>
-        <span className='post__username skeleton'></span>
-        <time className='post__date skeleton'></time>
-      </div>
-      <p className='post__content skeleton'></p>
-      
-      <div className='post__actions'>
-        <button className='skeleton' disabled aria-label="Like button loading"></button>
-        <button className='skeleton' disabled aria-label="Comments button loading"></button>
-      </div>
+    <div className={s.postHeader}>
+      <div className={`${s.postAvatar} ${s.skeleton}`}></div>
+      <span className={`${s.postUsername} ${s.skeleton}`}></span>
+      <time className={`${s.postDate} ${s.skeleton}`}></time>
+    </div>
+
+    <p className={`${s.postContent} ${s.skeleton}`}></p>
+
+    <div className={s.postActions}>
+      <button
+        className={s.skeleton}
+        disabled
+        aria-label="Like button loading"/>
+      <button
+        className={s.skeleton}
+        disabled
+        aria-label="Comments button loading"/>
+    </div>
     </article>
   );
 };

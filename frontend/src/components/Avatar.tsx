@@ -1,4 +1,5 @@
-import defaultAvatar from '../assets/avatar-default.svg'
+import defaultAvatar from '../assets/avatar-default.svg';
+import s from '../styles/Avatar.module.css';
 
 type AvatarProps = {
   readonly src?: string;
@@ -35,7 +36,7 @@ export default function Avatar({src, name, size = "md"}: AvatarProps){
 	}
 
 	return(
-		<div className="avatar" style={{width: px, height: px}}>
+		<div className={s.avatar} style={{width: px, height: px}}>
 			{content}
 		</div>
 	)

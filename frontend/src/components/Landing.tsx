@@ -1,13 +1,17 @@
 import s from '../styles/Landing.module.css';
 import GameCard from './GameCard';
-import goImage from '../assets/go.svg';
+import goImage from '../assets/go.png';
 import sudokuImage from '../assets/sudoku.png';
 
-export default function Landing(){
+type LandingProps = {
+  onLoginClick: () => void;
+}
+
+export default function Landing({onLoginClick} :LandingProps ){
   return (
     <>
     <div className={s.header__actions}> 
-      <button>
+      <button onClick={onLoginClick}>
         Login
       </button>
       <button>
