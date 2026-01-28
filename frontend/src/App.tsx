@@ -7,9 +7,9 @@ import Landing from './components/Landing';
 import'./App.css';
 
 type User = {
-  id: true,
-  username: true,
-  avatarUrl: true,
+  id: number,
+  username: string,
+  avatarUrl?: string,
 }
 
 export default function App(){

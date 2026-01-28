@@ -4,10 +4,10 @@ import NewPost from './Feed/NewPost';
 import {Search, House, PenTool, MessageCircle} from 'lucide-react';
 import { useState } from 'react';
 
-type User =  {
-  id: true,
-  username: true,
-  avatarUrl: true,
+type User = {
+  id: number,
+  username: string,
+  avatarUrl?: string,
 }
 
 type DashboardProps = {

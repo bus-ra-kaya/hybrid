@@ -11,10 +11,10 @@ type FormData = {
 }
 
 type User = {
-  id: true,
-  username: true,
-  avatarUrl: true,
-};
+  id: number,
+  username: string,
+  avatarUrl?: string,
+}
 
 type AuthFormProps = {
   onSuccess: (u: User) => void;
