@@ -21,6 +21,8 @@ type AuthFormProps = {
   onSwitchToLogin: () => void;
 }
 
+// combine the RegisterForm and LoginForm so that it branches after an email check
+
 export default function AuthForm({onSuccess, onSwitchToLogin}: AuthFormProps){
 
   const [formData, setFormData] = useState<FormData>({

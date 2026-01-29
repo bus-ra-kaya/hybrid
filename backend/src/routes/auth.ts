@@ -14,6 +14,8 @@ if (!JWT_SECRET) {
   throw new Error('JWT_SECRET is not defined');
 }
 
+// need to add rate limiting and delay time (whether info exists or not) to both endpoints
+
 router.post('/register', asyncHandler(async (req: Request, res: Response) => {
   const {email, username, password} = req.body;
 

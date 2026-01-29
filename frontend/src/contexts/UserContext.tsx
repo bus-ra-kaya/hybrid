@@ -1,4 +1,4 @@
-import {createContext, useContext, useEffect, useState} from "react";
+import { createContext, useContext } from 'react';
 
 type User = {
   id: string;
@@ -8,36 +8,17 @@ type User = {
 
 type UserContextValue = {
   user: User | null;
-  loading: boolean;
+  setUser: (user: User) => void;
 }
 
-const UserContext = createContext<UserContextValue | undefined>(undefined);
+export const UserContext = createContext<UserContextValue | undefined>(undefined);
 
-export function UserProvider({children}: {children: React.ReactNode}){
-  const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    try{
-    //add fetching function
-      
-    setLoading(false);
-    }
-    catch(err){
-      throw new Error(err);
-    }
-  }, []);
-
-return (
-  <UserContext.Provider value={{user, loading}}>
-    {children}
-    </UserContext.Provider>
-)}
-
-export function useUser(){
+export function useUser() {
   const context = useContext(UserContext);
-  if(context === undefined){
+  if (context === undefined) {
     throw new Error('useUser must be used within UserProvider');
   }
   return context;
 }
+
+export type { User, UserContextValue };
