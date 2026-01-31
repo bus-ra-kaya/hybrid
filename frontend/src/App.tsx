@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useUser } from './contexts/UserContext';
 import Dashboard from './components/Dashboard';
 import RegisterForm from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
@@ -6,18 +7,12 @@ import Footer from './components/Footer';
 import Landing from './components/Landing';
 import'./App.css';
 
-type User = {
-  id: number,
-  username: string,
-  avatarUrl?: string,
-}
-
 export default function App(){
 
-  const [user, setUser] = useState<null | User>(null);
+  const {user} = useUser();
   const [authMode, setAuthMode] = useState<'login' | 'register' | null>(null);
 
-  return(
+ return(
     <div className='page'>
       <main className='main'>
         {!user && !authMode && (
@@ -27,16 +22,14 @@ export default function App(){
         )}
         {!user && authMode === 'login' && (
           <LoginForm 
-            onSuccess={(u: User) => {setUser(u); setAuthMode(null);}}
             onSwitchToRegister={() => setAuthMode('register')} />
         )}
         {!user && authMode === 'register' && (
           <RegisterForm 
-            onSuccess={(u: User) => {setUser(u); setAuthMode(null);}}
             onSwitchToLogin={() => setAuthMode('login')}/>
         )}
         {user && (
-          <Dashboard user={user} onLogout={() => setUser(null)} />
+          <Dashboard onLogout={() => setAuthMode(null)} />
         )}
       </main>
       <footer className='footer'>
