@@ -2,7 +2,7 @@
 
 .avatar{
   border: 2px solid black;
-  border-radius: 20px;
+  border-radius: 100px;
   background-color: aliceblue;
   color: black;
   display: flex;
@@ -10,6 +10,7 @@
   justify-content: center;
   font-weight: bold;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .avatar img {

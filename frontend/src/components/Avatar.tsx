@@ -10,7 +10,7 @@ type AvatarProps = {
 const SIZES = {
   sm: 32,
   md: 40,
-  lg: 56
+  lg: 70
 }
 
 export default function Avatar({src, name, size = "md"}: AvatarProps){

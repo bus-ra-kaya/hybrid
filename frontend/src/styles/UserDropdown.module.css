@@ -40,6 +40,9 @@
   opacity: 0.8;
   border-bottom: 1px solid rgba(255,255,255,0.1);
   padding-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dropdownSection {
@@ -49,7 +52,8 @@
   border: none;
   font-size: 0.9rem;
   cursor: pointer;
-  text-align: left;
+  color: white;
+  
 }
 
 .dropdownSection:hover {
@@ -59,4 +63,5 @@
 .dropdownSection svg {
   width: 16px;
   height: 16px;
+  color: white;
 }
