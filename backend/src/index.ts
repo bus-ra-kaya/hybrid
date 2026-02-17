@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import authRoutes from './routes/auth.js';
 import postRoutes from './routes/posts.js'
+import userRoutes from './routes/user.js';
 import { errorHandler } from './middleware/errorHandler.js';
 import express from 'express';
 
@@ -11,6 +12,7 @@ app.use(express.json());
 
 app.use('/api/auth',authRoutes);
 app.use('/api/posts', postRoutes);
+app.use('/api/user', userRoutes);
 
 app.get("/health", (req, res) => {
   res.json({ ok: true });

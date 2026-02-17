@@ -6,9 +6,10 @@ import s from '../styles/UserDropdown.module.css';
 
 type UserMenuProps = {
   onLogout: () => void;
+  onProfileClick: () => void;
 }
 
-export default function UserMenu({onLogout}: UserMenuProps){
+export default function UserMenu({onLogout, onProfileClick}: UserMenuProps){
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -34,7 +35,7 @@ export default function UserMenu({onLogout}: UserMenuProps){
   }
 
   return(
-    <div ref={dropdownRef}>
+    <div ref={dropdownRef} className={s.dropdownWrapper}>
       <button 
       onClick={() => {setIsOpen(prev => !prev)}}
       className={s.dropdownBtn}
@@ -45,7 +46,8 @@ export default function UserMenu({onLogout}: UserMenuProps){
 
       {isOpen && (
         <div className={s.dropdownMenu}>
-          {user?.username}
+          <div className={`${s.dropdownHeader} ${s.dropdownSection}`}> {user?.username} </div>
+          <button className={s.dropdownSection} onClick={onProfileClick}>Profile</button>
           <button className={s.dropdownSection} onClick={handleLogout}>
             <LogOut /> Logout
           </button>

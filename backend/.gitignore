@@ -23,3 +23,6 @@ pnpm-debug.log*
 
 /src/generated/prisma
 generated
+
+/src/uploads/
+/src/uploads/profile-images/

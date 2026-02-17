@@ -6,15 +6,17 @@
 
 .dashboard {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto;
   grid-template-columns: 240px 1fr;
+  margin: 0px auto;
+  max-width: 1200px;
 }
 
 .header {
   grid-column: 1 /-1;
   padding: 1rem 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.658);
-  margin-bottom: 4px;
+  margin: 2rem 1rem;
   height: 56px;
   display: flex;
   justify-content: space-between;
@@ -58,8 +60,14 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
   gap: 4px;
   padding: 0.5rem 1em;
   width: 100%;
+}
+
+@media (max-width: 600px){
+  .sidebarLeft {
+    display: none;
+  }
 }
